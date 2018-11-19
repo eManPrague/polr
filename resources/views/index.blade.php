@@ -12,7 +12,7 @@
         class='form-control long-link-input' placeholder='http://' name='link-url' />
 
     <div class='row' id='options' ng-cloak>
-        <p>Customize link</p>
+        {{-- <p>Customize link</p> --}}
 
         @if (!env('SETTING_PSEUDORANDOM_ENDING'))
         {{-- Show secret toggle only if using counter-based ending --}}
@@ -32,19 +32,19 @@
                 <input type='text' autocomplete="off" class='form-control custom-url-field' name='custom-ending' />
             </div>
             <div>
-                <a href='#' class='btn btn-success btn-xs check-btn' id='check-link-availability'>Check Availability</a>
+                <a href='#' class='btn btn-danger btn-xs check-btn' id='check-link-availability'>Check Availability</a>
                 <div id='link-availability-status'></div>
             </div>
         </div>
     </div>
-    <input type='submit' class='btn btn-info' id='shorten' value='Shorten' />
-    <a href='#' class='btn btn-warning' id='show-link-options'>Link Options</a>
+    <input type='submit' class='btn btn-info' id='shorten' value='Shorten link' />
+    {{-- <a href='#' class='btn btn-warning' id='show-link-options'>Link Options</a> --}}
     <input type="hidden" name='_token' value='{{csrf_token()}}' />
 </form>
 
-<div id='tips' class='text-muted tips'>
+{{-- <div id='tips' class='text-muted tips'>
     <i class='fa fa-spinner'></i> Loading Tips...
-</div>
+</div>--}}
 @endsection
 
 @section('js')

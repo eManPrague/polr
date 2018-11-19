@@ -9,7 +9,7 @@
 <div ng-controller="AdminCtrl" class="ng-root">
     <div class='col-md-2'>
         <ul class='nav nav-pills nav-stacked admin-nav' role='tablist'>
-            <li role='presentation' aria-controls="home" class='admin-nav-item active'><a href='#home'>Home</a></li>
+            {{-- <li role='presentation' aria-controls="home" class='admin-nav-item active'><a href='#home'>Home</a></li> --}}
             <li role='presentation' aria-controls="links" class='admin-nav-item'><a href='#links'>Links</a></li>
             <li role='presentation' aria-controls="settings" class='admin-nav-item'><a href='#settings'>Settings</a></li>
 
@@ -24,10 +24,10 @@
     </div>
     <div class='col-md-10'>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">
+            {{-- <div role="tabpanel" class="tab-pane active" id="home">
                 <h2>Welcome to your {{env('APP_NAME')}} dashboard!</h2>
                 <p>Use the links on the left hand side to navigate your {{env('APP_NAME')}} dashboard.</p>
-            </div>
+            </div> --}}
 
             <div role="tabpanel" class="tab-pane" id="links">
                 @include('snippets.link_table', [
@@ -41,7 +41,7 @@
                     Old Password: <input class="form-control password-box" type='password' name='current_password' />
                     New Password: <input class="form-control password-box" type='password' name='new_password' />
                     <input type="hidden" name='_token' value='{{csrf_token()}}' />
-                    <input type='submit' class='btn btn-success change-password-btn'/>
+                    <input type='submit' class='btn btn-success change-password-btn' value="Confirm Change Password"/>
                 </form>
             </div>
 

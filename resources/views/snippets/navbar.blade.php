@@ -9,11 +9,13 @@
 
         <!-- Output sign in/sign out buttons appropriately -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('index') }}">{{env('APP_NAME')}}</a>
+            <a class="navbar-brand" href="{{ route('index') }}">
+                <img src="//www.eman.cz/wp-content/thesis/skins/classic-r/images/logo.svg" width="83" height="30" alt="{{env('APP_NAME')}}" />
+            </a>
         </div>
 
         <ul id="navbar" class="nav navbar-collapse collapse navbar-nav" id="nbc">
-		    <li><a href="{{ route('about') }}">About</a></li>
+		    {{-- <li><a href="{{ route('about') }}">About</a></li> --}}
 
             @if (empty(session('username')))
                 <li class="visible-xs"><a href="{{ route('login') }}">Sign In</a></li>
@@ -21,8 +23,10 @@
                     <li class="visible-xs"><a href="{{ route('signup') }}">Sign Up</a></li>
                 @endif
             @else
-                <li class="visible-xs"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="visible-xs"><a href="{{ route('admin') }}#settings">Settings</a></li>
+                {{-- <li class="visible-xs"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li class="visible-xs"><a href="{{ route('admin') }}#settings">Settings</a></li> --}}
+                <li class="visible-xs"><a href="{{ route('index') }}">Create new link</a></li>
+                <li class="visible-xs"><a href="{{ route('admin') }}#link">Links list</a></li>
                 <li class="visible-xs"><a href="{{ route('logout') }}">Logout</a></li>
             @endif
         </ul>
@@ -35,7 +39,7 @@
                     <li><a href="{{route('signup')}}">Sign Up</a></li>
                 @endif
 
-                <li class="dropdown">
+                {{-- <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                     <div class="dropdown-menu pull-right login-dropdown-menu" id="dropdown">
                         <h2>Login</h2>
@@ -46,14 +50,16 @@
                             <input class="btn btn-success form-control login-form-submit" type="submit" name="login" value="Sign In" />
                         </form>
                     </div>
-                </li>
+                </li> --}}
             @else
                 <div class='nav pull-right navbar-nav'>
                     <li class='dropdown'>
                     <a class="dropdown-toggle login-name" href="#" data-toggle="dropdown">{{session('username')}} <strong class="caret"></strong></a>
                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
-                            <li><a tabindex="-1" href="{{ route('admin') }}">Dashboard</a></li>
-                            <li><a tabindex="-1" href="{{ route('admin') }}#settings">Settings</a></li>
+                            {{-- <li><a tabindex="-1" href="{{ route('admin') }}">Dashboard</a></li>
+                            <li><a tabindex="-1" href="{{ route('admin') }}#settings">Settings</a></li> --}}
+                            <li><a tabindex="-1" href="{{ route('index') }}">Create new link</a></li>
+                            <li><a tabindex="-1" href="{{ route('admin') }}#links">Links list</a></li>
                             <li><a tabindex="-1" href="{{ route('logout') }}">Logout</a></li>
                         </ul>
                     </li>

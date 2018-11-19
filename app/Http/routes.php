@@ -17,17 +17,17 @@ if (env('POLR_ALLOW_ACCT_CREATION')) {
 $app->get('/', ['as' => 'index', 'uses' => 'IndexController@showIndexPage']);
 $app->get('/logout', ['as' => 'logout', 'uses' => 'UserController@performLogoutUser']);
 $app->get('/login', ['as' => 'login', 'uses' => 'UserController@displayLoginPage']);
-$app->get('/about-polr', ['as' => 'about', 'uses' => 'StaticPageController@displayAbout']);
+//$app->get('/about-polr', ['as' => 'about', 'uses' => 'StaticPageController@displayAbout']);
 
-$app->get('/lost_password', ['as' => 'lost_password', 'uses' => 'UserController@displayLostPasswordPage']);
-$app->get('/activate/{username}/{recovery_key}', ['as' => 'activate', 'uses' => 'UserController@performActivation']);
-$app->get('/reset_password/{username}/{recovery_key}', ['as' => 'reset_password', 'uses' => 'UserController@performPasswordReset']);
+//$app->get('/lost_password', ['as' => 'lost_password', 'uses' => 'UserController@displayLostPasswordPage']);
+//$app->get('/activate/{username}/{recovery_key}', ['as' => 'activate', 'uses' => 'UserController@performActivation']);
+//$app->get('/reset_password/{username}/{recovery_key}', ['as' => 'reset_password', 'uses' => 'UserController@performPasswordReset']);
 
 $app->get('/admin', ['as' => 'admin', 'uses' => 'AdminController@displayAdminPage']);
 
-$app->get('/setup', ['as' => 'setup', 'uses' => 'SetupController@displaySetupPage']);
-$app->post('/setup', ['as' => 'psetup', 'uses' => 'SetupController@performSetup']);
-$app->get('/setup/finish', ['as' => 'setup_finish', 'uses' => 'SetupController@finishSetup']);
+//$app->get('/setup', ['as' => 'setup', 'uses' => 'SetupController@displaySetupPage']);
+//$app->post('/setup', ['as' => 'psetup', 'uses' => 'SetupController@performSetup']);
+//$app->get('/setup/finish', ['as' => 'setup_finish', 'uses' => 'SetupController@finishSetup']);
 
 $app->get('/{short_url}', ['uses' => 'LinkController@performRedirect']);
 $app->get('/{short_url}/{secret_key}', ['uses' => 'LinkController@performRedirect']);

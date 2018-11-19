@@ -124,6 +124,7 @@ polr.controller('AdminCtrl', function($scope, $compile, $timeout) {
             'autoWidth': false,
             'processing': true,
             'serverSide': true,
+            'pageLength': 100,
 
             'drawCallback': function () {
                 // Compile Angular bindings on each draw
